@@ -1,0 +1,35 @@
+{
+  "name": "Hunting Sale",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Extension Hunting Sale",
+  "icons": {
+    "24": "images/icons/tool.png",
+    "48": "images/icons/tool.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "24": "images/icons/tool.png",
+      "48": "images/icons/tool.png"
+    },
+    "default_title": "Hunting Sale Extension"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://shopee.vn/", "<all_urls>"],
+      "js": [
+        "/js/external/jquery.js",
+        "/js/scripts/page/shopee.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": ["/js/scripts/config.js"],
+  "permissions": [
+    "clipboardWrite",
+    "storage",
+    "tabs",
+    "activeTab",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
